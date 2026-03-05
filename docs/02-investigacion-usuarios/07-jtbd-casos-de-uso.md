@@ -1,168 +1,158 @@
-<img width="1360" height="1760" alt="Diagrama de caso de uso" src="https://github.com/user-attachments/assets/0d071c12-99b3-4bd2-9c95-b8496b2438dc" />
+<img width="1360" height="1760" alt="Diagrama de caso de uso (1)" src="https://github.com/user-attachments/assets/be3aad99-bdce-4d66-8567-6522c377abc3" />
 # Diagrama de Casos de Uso — Sistema Traductor
 
 ## Descripción general
 
-El siguiente diagrama de casos de uso representa las **principales interacciones entre los usuarios y el sistema Traductor**, una aplicación de traducción asistida por inteligencia artificial que opera bajo un enfoque **local-first**, donde los documentos y datos sensibles se procesan y almacenan localmente en el dispositivo del usuario.
+El siguiente diagrama de casos de uso muestra las principales funcionalidades del **Sistema Traductor**, una aplicación diseñada para realizar traducciones asistidas por inteligencia artificial. El sistema permite gestionar documentos, realizar traducciones, y administrar glosarios de términos para mejorar la precisión de las traducciones.
 
-El objetivo del diagrama es mostrar:
+El objetivo del diagrama es representar:
 
 - Los **actores que interactúan con el sistema**
-- Las **funcionalidades principales del sistema**
-- Cómo los usuarios acceden a las distintas operaciones del sistema
+- Las **funcionalidades disponibles**
+- Cómo cada actor puede utilizar dichas funciones
 
-El diagrama se encuentra representado en el documento adjunto:  
-:contentReference[oaicite:0]{index=0}
-
----
-
-# Límite del Sistema
-
-El rectángulo central del diagrama representa el sistema llamado:
-
-**TRADUCTOR**
-
-Dentro de este límite se encuentran todos los **casos de uso**, que representan las funcionalidades disponibles en la aplicación.
-
-Los **actores se encuentran fuera del sistema**, ya que representan entidades externas que interactúan con el software.
+El sistema se encuentra representado dentro de un límite llamado **TRADUCTOR**, donde se agrupan todos los casos de uso.
 
 ---
 
 # Actores del Sistema
 
-El diagrama incluye tres actores principales.
+El sistema cuenta con tres tipos principales de usuarios.
 
 ## Usuario sin autenticar
 
 Este actor representa a un usuario que aún **no ha iniciado sesión en el sistema**.
 
-Su interacción principal es:
+Su única interacción posible es:
 
 - **Iniciar sesión**
 
-Una vez autenticado, el usuario obtiene acceso a las funcionalidades del sistema.
+Una vez autenticado, el usuario puede acceder a las funcionalidades del sistema.
 
 ---
 
-## Usuario autenticado
+## Usuario autenticado (básico)
 
-Este actor representa a cualquier usuario que **ya inició sesión** y tiene acceso a funcionalidades del sistema relacionadas con la gestión de documentos y proyectos.
+Este actor representa a un usuario que ya ha iniciado sesión y puede realizar operaciones básicas dentro del sistema.
 
-Puede interactuar con:
+Entre sus capacidades se encuentran:
 
-- importación de archivos
-- edición de documentos
-- exportación de documentos traducidos
-- gestión de proyectos
-- visualización de traducciones
-- administración de glosarios
-
----
-
-## Traductor
-
-El actor **Traductor** representa al usuario especializado que utiliza el sistema para realizar traducciones asistidas por IA.
-
-Sus responsabilidades principales incluyen:
-
-- elegir idioma de traducción
-- visualizar traducciones
-- traducir palabras con contexto
+- importar archivos
+- editar documentos
+- exportar documentos traducidos
+- ver traducciones
+- seleccionar idioma
 - crear glosarios
 - administrar glosarios
 
-Este actor representa el **usuario principal del sistema**, ya que utiliza las capacidades de traducción de la aplicación.
+Este usuario puede utilizar las funcionalidades principales del sistema de traducción.
 
 ---
 
-# Casos de Uso Principales
+## Usuario premium
 
-El sistema incluye varias funcionalidades organizadas en diferentes dominios.
+El **usuario premium** tiene acceso a funcionalidades más avanzadas del sistema, incluyendo la gestión completa de proyectos y documentos.
+
+Entre sus capacidades se encuentran:
+
+- importar archivos
+- editar documentos
+- exportar documentos con traducción
+- eliminar proyectos
+- elegir idioma de traducción
+- visualizar traducciones
+- traducir palabras con definición contextual
+- crear y administrar glosarios
+- editar documentos
+
+Este tipo de usuario tiene mayor control sobre la gestión de información dentro del sistema.
 
 ---
 
-# Gestión de Sesión
+# Casos de Uso del Sistema
+
+Las funcionalidades del sistema se encuentran organizadas en tres grupos principales.
+
+---
+
+# 1. Gestión de Sesión
 
 Permite controlar el acceso al sistema.
 
 Casos de uso:
 
-- Iniciar sesión
-- Cerrar sesión
+- **Iniciar sesión**
+- **Cerrar sesión**
 
-Estos casos de uso permiten autenticar al usuario antes de acceder a las funcionalidades principales del sistema.
-
----
-
-# Administración de Documentos
-
-Este conjunto de casos de uso permite gestionar documentos dentro del sistema.
-
-Incluye:
-
-- Importar archivo
-- Editar documento
-- Exportar documento con traducción
-- Eliminar proyecto
-
-Estas acciones permiten trabajar con documentos que posteriormente serán procesados por el sistema de traducción.
+Estos procesos permiten autenticar al usuario antes de que pueda interactuar con el sistema.
 
 ---
 
-# Traducciones
+# 2. Administración de Documentos
 
-Este grupo de funcionalidades corresponde al **núcleo del sistema**.
+Este conjunto de funcionalidades permite manejar documentos dentro del sistema.
+
+Incluye los siguientes casos de uso:
+
+- **Importar archivo**
+- **Editar documento**
+- **Exportar documento con traducción**
+- **Eliminar proyecto**
+
+Estas acciones permiten al usuario trabajar con documentos que posteriormente serán procesados por el sistema de traducción.
+
+---
+
+# 3. Traducciones
+
+Estas funcionalidades representan el núcleo del sistema.
+
+Casos de uso incluidos:
+
+- **Elegir idioma**
+- **Ver traducción**
+- **Traducir palabra con su definición contextual**
+
+Estas operaciones permiten que el sistema utilice inteligencia artificial para generar traducciones y mostrar resultados al usuario.
+
+---
+
+# 4. Gestión de Glosarios
+
+Los glosarios permiten mejorar la consistencia terminológica de las traducciones.
 
 Casos de uso:
 
-- Elegir idioma
-- Ver traducción
-- Traducir palabra con su definición contextual
+- **Crear glosario**
+- **Administrar glosario**
 
-Estas operaciones permiten que el usuario interactúe con los modelos de IA para obtener traducciones.
-
----
-
-# Gestión de Glosarios
-
-Los glosarios permiten mantener **consistencia terminológica** en las traducciones.
-
-Casos de uso:
-
-- Crear glosario
-- Administrar glosario
-
-Esto permite que el sistema utilice terminología específica definida por el usuario.
+Esto permite que el sistema mantenga un conjunto de términos personalizados que pueden utilizarse durante el proceso de traducción.
 
 ---
 
-# Flujo de Uso del Sistema
+# Flujo de uso del sistema
 
-Un flujo típico de interacción con el sistema sería:
+Un flujo típico de uso del sistema sería el siguiente:
 
 1. El usuario abre la aplicación.
-2. El usuario inicia sesión.
-3. Importa un archivo para traducir.
-4. Edita o prepara el documento.
-5. Selecciona el idioma de traducción.
-6. El sistema genera traducciones utilizando IA.
-7. El usuario revisa la traducción.
-8. Puede exportar el documento traducido.
-9. Finalmente cierra sesión.
+2. Si no está autenticado, debe **iniciar sesión**.
+3. Una vez dentro del sistema, puede **importar un archivo**.
+4. El usuario puede **editar el documento** si es necesario.
+5. Selecciona el **idioma de traducción**.
+6. El sistema genera la traducción utilizando IA.
+7. El usuario puede **visualizar la traducción**.
+8. Puede **exportar el documento traducido**.
+9. Finalmente puede **cerrar sesión**.
 
 ---
 
-# Importancia del Diagrama
+# Conclusión
 
-El diagrama de casos de uso permite visualizar de manera clara:
+El diagrama de casos de uso permite visualizar de forma clara cómo interactúan los distintos tipos de usuarios con el sistema Traductor.
 
-- las funcionalidades principales del sistema
-- qué usuarios pueden acceder a cada operación
-- la estructura funcional del sistema Traductor
+Este modelo ayuda a:
 
-Además sirve como base para:
-
-- diseño de interfaz
-- implementación de permisos
-- diseño de arquitectura del sistema
-- planificación del desarrollo del software
+- comprender las funcionalidades principales del sistema
+- definir permisos y niveles de acceso
+- estructurar el diseño del software
+- servir como base para el desarrollo del sistema
