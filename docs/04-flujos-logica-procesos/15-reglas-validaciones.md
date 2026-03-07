@@ -1,10 +1,5 @@
 # Especificación de Reglas y Validaciones — Sistema Traductor
 
-## Estado
-Borrador
-
-## Owner
-T1 — Product/Tech Analyst
 
 ## Objetivo
 Definir formalmente las **reglas de negocio** y las **validaciones** de la aplicación Traductor, asegurando la correcta operación del sistema de traducción asistida por IA. 
